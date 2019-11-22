@@ -31,8 +31,7 @@ The following structure will be generated (relative to `.oemrc.js`):
 
 ```
 .oemrc.js
-├── example
-|   └── World # with the contents: Hello, World!
+  └── World # with the contents: Hello, World!
 ```
 
 It also supports async functions for template and structure generation.

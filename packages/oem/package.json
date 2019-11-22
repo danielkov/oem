@@ -1,0 +1,29 @@
+{
+  "name": "oem",
+  "version": "1.0.0",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation",
+  "bin": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "typescript": "3.7.2"
+  },
+  "dependencies": {
+    "@oem/cli": "1.0.0",
+    "@oem/config": "^1.0.0",
+    "@oem/core": "1.0.0",
+    "@oem/types": "^1.0.0",
+    "debug": "^4.1.1",
+    "fs-extra": "^8.1.0"
+  },
+  "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
+  "license": "MIT"
+}

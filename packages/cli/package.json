@@ -1,0 +1,25 @@
+{
+  "name": "@oem/cli",
+  "version": "1.0.0",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - CLI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "typescript": "3.7.2"
+  },
+  "dependencies": {
+    "@oem/types": "^1.0.0",
+    "commander": "4.0.1",
+    "debug": "4.1.1"
+  },
+  "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
+  "license": "MIT"
+}

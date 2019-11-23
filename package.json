@@ -10,7 +10,9 @@
     "/dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "postinstall": "lerna run install && lerna bootstrap",
+    "build": "lerna run build",
+    "add": "lerna install"
   },
   "devDependencies": {
     "@types/debug": "^4.1.5",

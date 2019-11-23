@@ -8,10 +8,16 @@ export type OemTree = {
   [key: string]: OemTemplate | OemTree;
 };
 
+export type OemArgumentDefinition = {
+  name: string;
+  type: "Boolean" | "Number" | "String";
+  description?: string;
+};
+
 export type OemUnit = {
   (args: OemArgs): OemTree | Promise<OemTree>;
   description?: string;
-  args?: { [key: string]: string };
+  args?: [OemArgumentDefinition];
 };
 
 export type OemConfig = {

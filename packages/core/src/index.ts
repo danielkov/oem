@@ -1,9 +1,10 @@
 import { ensureDir, writeFile } from "fs-extra";
 import { join } from "path";
-import debug from "debug";
+
+import createLog from "@oem/log";
 import { OemTree, OemCommand, OemConfig } from "@oem/types";
 
-const log = debug("oem:core");
+const log = createLog("oem:core");
 
 const walkObject = async <K extends string | number, V, R>(
   object: { [key in K]: V },
@@ -23,31 +24,31 @@ const oem = async (
   rootDir: string = process.cwd()
 ) => {
   try {
-    log(`Making sure directory exists: ${rootDir}`);
+    log`Making sure directory exists: ${rootDir}`;
     await ensureDir(rootDir);
     const tree = await config[name](args);
-    log("Parsing tree");
+    log`Parsing tree`;
     const parseTree = (tree: OemTree, dir: string): Promise<any> => {
-      log(`Walking tree with base directory: ${dir}`);
+      log`Walking tree with base directory: ${dir}`;
       return walkObject(tree, async (key: string, tplOrTree) => {
-        log(`Processing unit: ${key}`);
+        log`Processing unit: ${key}`;
         const nextPath = join(dir, key);
         if (isTree(tplOrTree)) {
-          log(`${key} contains a tree`);
-          log(`Making sure ${nextPath} exists`);
+          log`${key} contains a tree`;
+          log`Making sure ${nextPath} exists`;
           await ensureDir(nextPath);
-          log("Recurse on tree parsing");
+          log`Recurse on tree parsing`;
           return await parseTree(tplOrTree, nextPath);
         }
-        log(`${key} contains a template`);
+        log`${key} contains a template`;
         const file = await tplOrTree(args);
-        log(`Writing new file contents:\n${file}`);
+        log`Writing new file contents:\n${file}`;
         await writeFile(nextPath, file);
       });
     };
     await parseTree(tree, rootDir);
   } finally {
-    log("Done processing");
+    log`Done processing`;
   }
 };
 

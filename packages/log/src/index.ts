@@ -1,4 +1,5 @@
 import { performance } from "perf_hooks";
+import { inspect } from "util";
 
 const colors = [
   20,
@@ -98,7 +99,9 @@ const createLog = (namespace: string) => {
       [
         part,
         variables[index]
-          ? useColor
+          ? typeof variables[index] === "object"
+            ? inspect(variables[index], { colors: useColor, compact: true })
+            : useColor
             ? `\u001b[33m${variables[index]}\u001B[0m`
             : variables[index]
           : undefined

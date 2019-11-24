@@ -1,4 +1,6 @@
-const packageJson = ({ name }) => `{
+const packageJson = ({
+  name
+}) => `{
   "name": "@oem/${name}",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - ${name}",
@@ -37,7 +39,9 @@ const tsConfig = () => `{
 }
 `;
 
-const package = ({ name }) => ({
+const package = ({
+  name
+}) => ({
   packages: {
     [name]: {
       src: {

@@ -21,12 +21,19 @@ const isTree = (candidate: any): candidate is OemTree => {
 const oem = async (
   { name, args }: OemCommand,
   config: OemConfig,
-  rootDir: string = process.cwd()
+  rootDir: string
 ) => {
   try {
     log`Making sure directory exists: ${rootDir}`;
     await ensureDir(rootDir);
-    const tree = await config[name](args);
+    const unit = config[name];
+    log`Selected unit: ${unit}`;
+    const { relative } = unit;
+    const dir = relative ? process.cwd() : rootDir;
+    log`Selected directory: ${dir}, because ${
+      relative ? "relative unit" : "absolute unit"
+    }`;
+    const tree = await unit(args);
     log`Parsing tree`;
     const parseTree = (tree: OemTree, dir: string): Promise<any> => {
       log`Walking tree with base directory: ${dir}`;
@@ -46,7 +53,7 @@ const oem = async (
         await writeFile(nextPath, file);
       });
     };
-    await parseTree(tree, rootDir);
+    await parseTree(tree, dir);
   } finally {
     log`Done processing`;
   }

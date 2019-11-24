@@ -18,6 +18,7 @@ export type OemUnit = {
   (args: OemArgs): OemTree | Promise<OemTree>;
   description?: string;
   args?: [OemArgumentDefinition];
+  relative?: boolean;
 };
 
 export type OemConfig = {

@@ -1,0 +1,21 @@
+{
+  "name": "@oem/manifest",
+  "version": "1.0.0",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - manifest",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "typescript": "3.7.2"
+  },
+  "dependencies": {},
+  "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
+  "license": "MIT"
+}

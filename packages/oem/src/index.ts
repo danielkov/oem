@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import cli from "@oem/cli";
 import oem from "@oem/core";
 import configure from "@oem/config";

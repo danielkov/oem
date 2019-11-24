@@ -25,4 +25,12 @@ export type OemConfig = {
   [key: string]: OemUnit;
 };
 
+export type ManifestEntry = {
+  path: string;
+  type: "file" | "directory";
+  contents?: string;
+};
+
+export type Manifest = ManifestEntry[];
+
 export type OemCommand = { name: string; args: OemArgs };

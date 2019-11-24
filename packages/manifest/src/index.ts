@@ -1,28 +1,29 @@
-const isObject = (candidate: unknown): candidate is object => {
-  return candidate !== "null" && typeof candidate === "object";
-};
+import createLog from "@oem/log";
+import { merge } from "@oem/util";
+import { Manifest, ManifestEntry } from "@oem/types";
 
-const merge = <T extends any>(original: T, updates: Partial<T>) => {
-  const result: T = { ...original };
-  Object.entries(updates).forEach(([key, value]) => {
-    if (!result.hasOwnProperty(key) || !isObject(updates[key])) {
-      result[key] = value;
-    } else {
-      result[key] = merge(result[key], updates[key]!);
-    }
-  });
-  return result;
-};
+const log = createLog("@oem:manifest");
 
 const createManifest = () => {
-  let manifest: any = {};
-  const update = (part: any) => {
-    merge(manifest, part);
+  log`Creating new manifest`;
+  const manifest: Manifest = [];
+  const update = (newEntry: ManifestEntry) => {
+    log`Updating manifest: ${manifest} update: ${newEntry}`;
+    const oldEntryIndex = manifest.findIndex(
+      entry => entry.path === newEntry.path
+    );
+    if (oldEntryIndex) {
+      const oldEntry = manifest[oldEntryIndex];
+      manifest[oldEntryIndex] = merge(oldEntry, newEntry);
+      return;
+    }
+    manifest.push(newEntry);
   };
   const get = () => {
-    return manifest;
+    log`Retrieving manifest: ${manifest}`;
+    return [...manifest];
   };
   return { update, get };
 };
 
-export default createManifest;
+export default createManifest();

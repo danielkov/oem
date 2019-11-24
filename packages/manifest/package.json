@@ -15,7 +15,11 @@
   "devDependencies": {
     "typescript": "3.7.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@oem/log": "1.0.0",
+    "@oem/util": "1.0.0",
+    "@oem/types": "1.0.0"
+  },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"
 }

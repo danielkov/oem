@@ -1,4 +1,4 @@
-import { readdir } from "fs-extra";
+import { readdir } from "@oem/fs";
 import { join } from "path";
 
 import createLog from "@oem/log";

@@ -16,9 +16,9 @@
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "@oem/log": "^1.0.0",
-    "@oem/types": "^1.0.0",
-    "fs-extra": "^8.1.0"
+    "@oem/fs": "1.0.0",
+    "@oem/log": "1.0.0",
+    "@oem/types": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"

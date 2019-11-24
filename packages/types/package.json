@@ -12,9 +12,10 @@
     "clean": "rm -rf ./dist",
     "compile": "tsc -p tsconfig.build.json"
   },
-  "devDependencies": {
-    "typescript": "3.7.2"
-  },
+  "devDependencies": {},
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@oem/fs": "1.0.0"
+  }
 }

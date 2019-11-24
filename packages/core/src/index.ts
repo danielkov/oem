@@ -1,4 +1,4 @@
-import { ensureDir, writeFile } from "fs-extra";
+import { ensureDir, writeFile } from "@oem/fs";
 import { join } from "path";
 
 import createLog from "@oem/log";

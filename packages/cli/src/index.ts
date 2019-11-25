@@ -1,4 +1,4 @@
-import { OemConfig } from "@oem/types";
+import { Config } from "@oem/types";
 import createLog from "@oem/log";
 
 const log = createLog("oem:cli");
@@ -38,7 +38,7 @@ const parse = (args: string[]) => {
   return parsed;
 };
 
-const cli = async (config: OemConfig) => {
+const cli = async (config: Config) => {
   log`Adding argument parser configuration`;
   const { version } = require("../package.json");
   log`Reported version: ${version}`;

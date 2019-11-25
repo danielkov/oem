@@ -2,19 +2,19 @@ import { ensureDir, writeFile } from "@oem/fs";
 import { join } from "path";
 
 import createLog from "@oem/log";
-import { OemTree, OemCommand, OemConfig } from "@oem/types";
+import { Tree, Command, Config } from "@oem/types";
 import { walkObject } from "@oem/util";
 import manifest from "@oem/manifest";
 
 const log = createLog("oem:core");
 
-const isTree = (candidate: any): candidate is OemTree => {
+const isTree = (candidate: any): candidate is Tree => {
   return typeof candidate === "object";
 };
 
 const oem = async (
-  { name, args }: OemCommand,
-  config: OemConfig,
+  { name, args }: Command,
+  config: Config,
   rootDir: string
 ) => {
   try {
@@ -27,7 +27,7 @@ const oem = async (
     }`;
     const tree = await unit(args);
     log`Parsing tree`;
-    const parseTree = (tree: OemTree, dir: string): Promise<any> => {
+    const parseTree = (tree: Tree, dir: string): Promise<any> => {
       log`Walking tree with base directory: ${dir}`;
       manifest.update({ type: "directory", path: dir });
       return walkObject(tree, async (key: string, tplOrTree) => {

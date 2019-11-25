@@ -2,7 +2,7 @@ import { readdir } from "@oem/fs";
 import { join } from "path";
 
 import createLog from "@oem/log";
-import { OemConfig } from "@oem/types";
+import { Config } from "@oem/types";
 
 const log = createLog("oem:config");
 
@@ -21,9 +21,9 @@ const findDirectory = async (dir = process.cwd()): Promise<string> => {
   return await findDirectory(join(dir, "../"));
 };
 
-const config = async (): Promise<{ directory: string; config: OemConfig }> => {
+const config = async (): Promise<{ directory: string; config: Config }> => {
   const directory = await findDirectory();
-  const config: OemConfig = require(join(directory, ".oemrc.js"));
+  const config: Config = require(join(directory, ".oemrc.js"));
   return { directory, config };
 };
 

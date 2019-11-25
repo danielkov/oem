@@ -12,7 +12,8 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
-    "lint": "lerna run lint -- --max-warnings=0"
+    "lint": "lerna run lint -- --max-warnings=0",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.8.0",
@@ -22,6 +23,7 @@
     "eslint-plugin-import": "^2.18.2",
     "lerna": "3.19.0",
     "prettier": "1.19.1",
+    "standard-version": "7.0.1",
     "typescript": "3.7.2"
   }
 }

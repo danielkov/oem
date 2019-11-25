@@ -20,7 +20,10 @@ const packageJson = ({
   },
   "dependencies": {},
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
 `;
 

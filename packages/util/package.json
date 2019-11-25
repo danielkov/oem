@@ -18,5 +18,8 @@
     "typescript": "3.7.2"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

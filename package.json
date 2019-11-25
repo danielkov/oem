@@ -6,6 +6,9 @@
   "bin": "dist/cli.ts.js",
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "/dist"
   ],

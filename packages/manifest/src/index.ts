@@ -1,8 +1,8 @@
-import createLog from "@oem/log";
-import { merge } from "@oem/util";
-import { Manifest, ManifestEntry } from "@oem/types";
+import createLog from "@modernist/log";
+import { merge } from "@modernist/util";
+import { Manifest, ManifestEntry } from "@modernist/types";
 
-const log = createLog("@oem:manifest");
+const log = createLog("@modernist/manifest");
 
 const createManifest = () => {
   log`Creating new manifest`;

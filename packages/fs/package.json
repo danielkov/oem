@@ -1,5 +1,5 @@
 {
-  "name": "@oem/fs",
+  "name": "@modernist/fs",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - fs",
   "main": "dist/index",
@@ -18,8 +18,8 @@
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "@oem/log": "1.0.0",
-    "@oem/types": "1.0.0"
+    "@modernist/log": "1.0.0",
+    "@modernist/types": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"

@@ -1,8 +1,8 @@
-import createLog from "@oem/log";
-import manifest from "@oem/manifest";
-import { Plugin, Config, Command, Next } from "@oem/types";
+import createLog from "@modernist/log";
+import manifest from "@modernist/manifest";
+import { Plugin, Config, Command, Next } from "@modernist/types";
 
-const log = createLog("@oem/plugin");
+const log = createLog("@modernist/plugin");
 
 const plugin = (plugins: Plugin[]) => {
   log`Got plugins: ${plugins}`;

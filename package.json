@@ -1,5 +1,5 @@
 {
-  "name": "oem",
+  "name": "modernist",
   "version": "1.0.0",
   "main": "dist/index.ts.js",
   "source": "src/index.ts",

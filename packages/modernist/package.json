@@ -1,5 +1,5 @@
 {
-  "name": "oem",
+  "name": "modernist",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation",
   "bin": "dist/index.js",
@@ -19,13 +19,13 @@
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "@oem/cli": "1.0.0",
-    "@oem/config": "1.0.0",
-    "@oem/core": "1.0.0",
-    "@oem/fs": "1.0.0",
-    "@oem/log": "1.0.0",
-    "@oem/plugin": "1.0.0",
-    "@oem/types": "1.0.0"
+    "@modernist/cli": "1.0.0",
+    "@modernist/config": "1.0.0",
+    "@modernist/core": "1.0.0",
+    "@modernist/fs": "1.0.0",
+    "@modernist/log": "1.0.0",
+    "@modernist/plugin": "1.0.0",
+    "@modernist/types": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"

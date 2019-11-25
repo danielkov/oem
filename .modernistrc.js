@@ -1,7 +1,7 @@
 const packageJson = ({
   name
 }) => `{
-  "name": "@oem/${name}",
+  "name": "@modernist/${name}",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - ${name}",
   "main": "dist/index",

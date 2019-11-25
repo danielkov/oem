@@ -1,7 +1,7 @@
-import { Config } from "@oem/types";
-import createLog from "@oem/log";
+import { Config } from "@modernist/types";
+import createLog from "@modernist/log";
 
-const log = createLog("oem:cli");
+const log = createLog("modernist/cli");
 
 const stripDash = (argument: string) => argument.replace(/^-?-/, "");
 
@@ -47,7 +47,7 @@ const cli = async (config: Config) => {
 
   Object.entries(actions).forEach(([command, value]) => {
     const desc =
-      value.description || `Generates branch ${command} of .oemrc.js`;
+      value.description || `Generates branch ${command} of .modernistrc.js`;
     log`Start setting up options for command: ${command}`;
     log`Adding command: ${command} with description: ${desc}`;
     Object.entries(value.args || {}).forEach(([name, desc]) => {

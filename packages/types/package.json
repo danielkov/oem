@@ -1,5 +1,5 @@
 {
-  "name": "@oem/types",
+  "name": "@modernist/types",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - core",
   "main": "dist/index.js",

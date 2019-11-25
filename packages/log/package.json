@@ -1,5 +1,5 @@
 {
-  "name": "@oem/log",
+  "name": "@modernist/log",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - log",
   "main": "dist/index",

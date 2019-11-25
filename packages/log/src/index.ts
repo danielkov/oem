@@ -90,7 +90,7 @@ const useColor = process.stdout.isTTY && process.stdout.hasColors(256);
 const createLog = (namespace: string) => {
   const { DEBUG } = process.env;
   if (!DEBUG) {
-    return (parts: TemplateStringsArray, ...variables: any[]) => {};
+    return () => {};
   }
   const color = colors[encode(namespace, colors.length)];
   const colorCode = "\u001B[3" + (color < 8 ? color : "8;5;" + color);

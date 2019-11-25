@@ -12,7 +12,8 @@ const packageJson = ({
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "tsc -p tsconfig.build.json"
+    "compile": "tsc -p tsconfig.build.json",
+"lint": "eslint src/index.ts"
   },
   "devDependencies": {
     "typescript": "3.7.2"

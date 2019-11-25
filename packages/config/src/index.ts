@@ -26,6 +26,7 @@ const config = async (): Promise<{ directory: string; config: Config }> => {
   const directory = await findDirectory();
   log`Found directory: ${directory}`;
   log`Loading config from ${directory}/.oemrc.js`;
+  /* eslint-disable-next-line @typescript-eslint/no-var-requires */
   const config: any = require(join(directory, ".oemrc.js"));
   log`Found config: ${config}`;
   log`Determining if config is correct`;

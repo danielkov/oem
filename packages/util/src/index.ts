@@ -20,7 +20,7 @@ export const merge = <T extends any>(original: T, updates: Partial<T>) => {
     if (!result.hasOwnProperty(key) || !isObject(updates[key])) {
       result[key] = value;
     } else {
-      result[key] = merge(result[key], updates[key]!);
+      result[key] = merge(result[key], updates[key] || {});
     }
   });
   return result;

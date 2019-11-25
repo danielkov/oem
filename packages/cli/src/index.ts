@@ -41,6 +41,7 @@ const parse = (args: string[]) => {
 const cli = async (config: Config) => {
   const { actions } = config;
   log`Adding argument parser configuration`;
+  /* eslint-disable-next-line @typescript-eslint/no-var-requires */
   const { version } = require("../package.json");
   log`Reported version: ${version}`;
 

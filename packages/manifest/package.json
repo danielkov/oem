@@ -10,15 +10,17 @@
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "tsc -p tsconfig.build.json"
+    "compile": "tsc -p tsconfig.build.json",
+    "lint": "eslint src/index.ts"
   },
   "devDependencies": {
+    "eslint": "^6.7.1",
     "typescript": "3.7.2"
   },
   "dependencies": {
     "@oem/log": "1.0.0",
-    "@oem/util": "1.0.0",
-    "@oem/types": "1.0.0"
+    "@oem/types": "1.0.0",
+    "@oem/util": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"

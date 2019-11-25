@@ -1,10 +1,9 @@
 {
-  "name": "oem",
+  "name": "@oem/plugin",
   "version": "1.0.0",
-  "description": "Automagic 🦄 Project Scaffolding with Code Generation",
-  "bin": "dist/index.js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - plugin",
+  "main": "dist/index",
+  "types": "dist/index",
   "files": [
     "dist"
   ],
@@ -17,13 +16,9 @@
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "@oem/cli": "1.0.0",
-    "@oem/config": "1.0.0",
-    "@oem/core": "1.0.0",
-    "@oem/log": "1.0.0",
     "@oem/types": "1.0.0",
-    "@oem/plugin": "1.0.0",
-    "@oem/fs": "1.0.0"
+    "@oem/manifest": "1.0.0",
+    "@oem/log": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"

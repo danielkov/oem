@@ -1,7 +1,7 @@
 {
-  "name": "@oem/fs",
+  "name": "@oem/util",
   "version": "1.0.0",
-  "description": "Automagic 🦄 Project Scaffolding with Code Generation - fs",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - util",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -15,10 +15,7 @@
   "devDependencies": {
     "typescript": "3.7.2"
   },
-  "dependencies": {
-    "@oem/types": "1.0.0",
-    "@oem/log": "1.0.0"
-  },
+  "dependencies": {},
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"
 }

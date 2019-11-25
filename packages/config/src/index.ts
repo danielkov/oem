@@ -1,8 +1,9 @@
-import { readdir } from "@oem/fs";
 import { join } from "path";
 
+import { isObject } from "@oem/util";
+import { readdir } from "@oem/fs";
 import createLog from "@oem/log";
-import { OemConfig } from "@oem/types";
+import { Config, Unit } from "@oem/types";
 
 const log = createLog("oem:config");
 
@@ -21,10 +22,26 @@ const findDirectory = async (dir = process.cwd()): Promise<string> => {
   return await findDirectory(join(dir, "../"));
 };
 
-const config = async (): Promise<{ directory: string; config: OemConfig }> => {
+const config = async (): Promise<{ directory: string; config: Config }> => {
   const directory = await findDirectory();
-  const config: OemConfig = require(join(directory, ".oemrc.js"));
-  return { directory, config };
+  log`Found directory: ${directory}`;
+  log`Loading config from ${directory}/.oemrc.js`;
+  const config: any = require(join(directory, ".oemrc.js"));
+  log`Found config: ${config}`;
+  log`Determining if config is correct`;
+  if (config.actions) {
+    log`config.actions is present with value: ${config.actions}`;
+    return { directory, config };
+  }
+  log`Possible old config shape or incorrect`;
+  if (isObject(config)) {
+    log`We have an object exported, so we assume it's an action definition`;
+    return {
+      config: { actions: config as { [key: string]: Unit }, plugins: [] },
+      directory
+    };
+  }
+  throw new Error("Configuration is incorrect");
 };
 
 export default config;

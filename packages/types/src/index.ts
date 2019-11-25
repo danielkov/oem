@@ -22,7 +22,8 @@ export type Unit = {
 };
 
 export type Config = {
-  [key: string]: Unit;
+  plugins: Plugin[];
+  actions: { [key: string]: Unit };
 };
 
 export type ManifestEntry = {
@@ -34,3 +35,12 @@ export type ManifestEntry = {
 export type Manifest = ManifestEntry[];
 
 export type Command = { name: string; args: Args };
+
+export type Next = { called: boolean; (): Promise<Manifest> };
+
+export type Plugin = (
+  command: Command,
+  config: Config,
+  rootDir: string,
+  next: Next
+) => void;

@@ -7,7 +7,10 @@ import {
 import { promisify } from "util";
 import { join } from "path";
 
-import { Manifest } from "@oem/types";
+import createLog from "@oem/log";
+import { Plugin } from "@oem/types";
+
+const log = createLog("@oem/fs");
 
 export const exists = promisify(fsExists),
   mkdir = promisify(fsMkdir),
@@ -15,18 +18,21 @@ export const exists = promisify(fsExists),
   readdir = promisify(fsReaddir);
 
 export const ensureDir = async (dir: string) => {
+  log`ensureDir: ${dir}`;
   const exist = await exists(dir);
   return exist || (await mkdir(dir, { recursive: true }));
 };
 
 export const ensureFile = async (path: string, data: any): Promise<any> => {
+  log`ensureFile: ${path}`;
   const dir = join(path, "../");
   await ensureDir(dir);
   return await writeFile(path, data);
 };
 
-export const commit = async (next: () => Promise<Manifest>) => {
+const commit: Plugin = async (command, config, rootDir, next) => {
   const manifest = await next();
+  log`Commiting manifest: ${manifest}`;
   await Promise.all(
     manifest.map(async entry =>
       entry.type === "file"
@@ -35,3 +41,5 @@ export const commit = async (next: () => Promise<Manifest>) => {
     )
   );
 };
+
+export default commit;

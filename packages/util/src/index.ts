@@ -7,7 +7,11 @@ export const walkObject = async <K extends string | number, V, R>(
   );
 
 export const isObject = (candidate: unknown): candidate is object => {
-  return candidate !== "null" && typeof candidate === "object";
+  return (
+    candidate !== "null" &&
+    typeof candidate === "object" &&
+    !Array.isArray(candidate)
+  );
 };
 
 export const merge = <T extends any>(original: T, updates: Partial<T>) => {

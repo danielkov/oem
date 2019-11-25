@@ -18,7 +18,7 @@ const oem = async (
   rootDir: string
 ) => {
   try {
-    const unit = config[name];
+    const unit = config.actions[name];
     log`Selected unit: ${unit}`;
     const { relative } = unit;
     const directory = relative ? process.cwd() : rootDir;

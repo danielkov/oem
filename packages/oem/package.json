@@ -21,7 +21,9 @@
     "@oem/config": "1.0.0",
     "@oem/core": "1.0.0",
     "@oem/log": "1.0.0",
-    "@oem/types": "1.0.0"
+    "@oem/types": "1.0.0",
+    "@oem/plugin": "1.0.0",
+    "@oem/fs": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT"

@@ -39,11 +39,12 @@ const parse = (args: string[]) => {
 };
 
 const cli = async (config: Config) => {
+  const { actions } = config;
   log`Adding argument parser configuration`;
   const { version } = require("../package.json");
   log`Reported version: ${version}`;
 
-  Object.entries(config).forEach(([command, value]) => {
+  Object.entries(actions).forEach(([command, value]) => {
     const desc =
       value.description || `Generates branch ${command} of .oemrc.js`;
     log`Start setting up options for command: ${command}`;

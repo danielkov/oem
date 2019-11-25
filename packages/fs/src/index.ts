@@ -7,10 +7,10 @@ import {
 import { promisify } from "util";
 import { join } from "path";
 
-import createLog from "@oem/log";
-import { Plugin } from "@oem/types";
+import createLog from "@modernist/log";
+import { Plugin } from "@modernist/types";
 
-const log = createLog("@oem/fs");
+const log = createLog("@modernist/fs");
 
 export const exists = promisify(fsExists),
   mkdir = promisify(fsMkdir),

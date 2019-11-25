@@ -13,11 +13,11 @@
 
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "paths": {
-      "@oem/types": ["types/src"],
-      "@oem/config": ["config/src"],
-      "@oem/core": ["core/src"],
-      "@oem/cli": ["cli/src"],
-      "@oem/*": ["*/src"]
+      "@modernist/types": ["types/src"],
+      "@modernist/config": ["config/src"],
+      "@modernist/core": ["core/src"],
+      "@modernist/cli": ["cli/src"],
+      "@modernist/*": ["*/src"]
     }
   }
 }

@@ -1,12 +1,12 @@
 #! /usr/bin/env node
-import cli from "@oem/cli";
-import oem from "@oem/core";
-import configure from "@oem/config";
-import createLog from "@oem/log";
-import plugin from "@oem/plugin";
-import commit from "@oem/fs";
+import cli from "@modernist/cli";
+import modernist from "@modernist/core";
+import configure from "@modernist/config";
+import createLog from "@modernist/log";
+import plugin from "@modernist/plugin";
+import commit from "@modernist/fs";
 
-const log = createLog("oem");
+const log = createLog("modernist");
 
 const index = async () => {
   log`Getting configuration`;
@@ -17,7 +17,7 @@ const index = async () => {
   log`Got command: ${name} and arguments: ${args}`;
   log`Initializing plugins`;
   const { plugins } = config;
-  await plugin([oem, ...plugins, commit])({ name, args }, config, directory);
+  await plugin([modernist, ...plugins, commit])({ name, args }, config, directory);
 };
 
 index();

@@ -1,17 +1,17 @@
 import { join } from "path";
 
-import createLog from "@oem/log";
-import { Tree, Command, Config } from "@oem/types";
-import { walkObject } from "@oem/util";
-import manifest from "@oem/manifest";
+import createLog from "@modernist/log";
+import { Tree, Command, Config } from "@modernist/types";
+import { walkObject } from "@modernist/util";
+import manifest from "@modernist/manifest";
 
-const log = createLog("oem:core");
+const log = createLog("modernist/core");
 
 const isTree = (candidate: any): candidate is Tree => {
   return typeof candidate === "object";
 };
 
-const oem = async (
+const modernist = async (
   { name, args }: Command,
   config: Config,
   rootDir: string
@@ -52,4 +52,4 @@ const oem = async (
   return manifest.get();
 };
 
-export default oem;
+export default modernist;

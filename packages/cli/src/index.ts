@@ -1,7 +1,7 @@
-import { OemConfig } from "@oem/types";
-import createLog from "@oem/log";
+import { Config } from "@modernist/types";
+import createLog from "@modernist/log";
 
-const log = createLog("oem:cli");
+const log = createLog("modernist/cli");
 
 const stripDash = (argument: string) => argument.replace(/^-?-/, "");
 
@@ -38,14 +38,16 @@ const parse = (args: string[]) => {
   return parsed;
 };
 
-const cli = async (config: OemConfig) => {
+const cli = async (config: Config) => {
+  const { actions } = config;
   log`Adding argument parser configuration`;
+  /* eslint-disable-next-line @typescript-eslint/no-var-requires */
   const { version } = require("../package.json");
   log`Reported version: ${version}`;
 
-  Object.entries(config).forEach(([command, value]) => {
+  Object.entries(actions).forEach(([command, value]) => {
     const desc =
-      value.description || `Generates branch ${command} of .oemrc.js`;
+      value.description || `Generates branch ${command} of .modernistrc.js`;
     log`Start setting up options for command: ${command}`;
     log`Adding command: ${command} with description: ${desc}`;
     Object.entries(value.args || {}).forEach(([name, desc]) => {

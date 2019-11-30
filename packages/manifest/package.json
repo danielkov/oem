@@ -1,9 +1,9 @@
 {
-  "name": "@modernist/core",
+  "name": "@modernist/manifest",
   "version": "1.0.0",
-  "description": "Automagic 🦄 Project Scaffolding with Code Generation - core",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - manifest",
+  "main": "dist/index",
+  "types": "dist/index",
   "files": [
     "dist"
   ],
@@ -18,9 +18,7 @@
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "@modernist/fs": "1.0.0",
     "@modernist/log": "1.0.0",
-    "@modernist/manifest": "1.0.0",
     "@modernist/types": "1.0.0",
     "@modernist/util": "1.0.0"
   },

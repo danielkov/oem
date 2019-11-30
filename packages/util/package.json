@@ -1,9 +1,9 @@
 {
-  "name": "@modernist/core",
+  "name": "@modernist/util",
   "version": "1.0.0",
-  "description": "Automagic 🦄 Project Scaffolding with Code Generation - core",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - util",
+  "main": "dist/index",
+  "types": "dist/index",
   "files": [
     "dist"
   ],
@@ -16,13 +16,6 @@
   "devDependencies": {
     "eslint": "^6.7.1",
     "typescript": "3.7.2"
-  },
-  "dependencies": {
-    "@modernist/fs": "1.0.0",
-    "@modernist/log": "1.0.0",
-    "@modernist/manifest": "1.0.0",
-    "@modernist/types": "1.0.0",
-    "@modernist/util": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT",

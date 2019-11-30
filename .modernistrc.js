@@ -1,7 +1,7 @@
 const packageJson = ({
   name
 }) => `{
-  "name": "@oem/${name}",
+  "name": "@modernist/${name}",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - ${name}",
   "main": "dist/index",
@@ -12,14 +12,18 @@ const packageJson = ({
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "tsc -p tsconfig.build.json"
+    "compile": "tsc -p tsconfig.build.json",
+"lint": "eslint src/index.ts"
   },
   "devDependencies": {
     "typescript": "3.7.2"
   },
   "dependencies": {},
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
 `;
 

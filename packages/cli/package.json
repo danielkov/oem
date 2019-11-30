@@ -1,5 +1,5 @@
 {
-  "name": "@oem/cli",
+  "name": "@modernist/cli",
   "version": "1.0.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - CLI",
   "main": "dist/index.js",
@@ -10,15 +10,21 @@
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "tsc -p tsconfig.build.json"
+    "compile": "tsc -p tsconfig.build.json",
+    "lint": "eslint src/index.ts"
   },
   "devDependencies": {
+    "eslint": "^6.7.1",
     "typescript": "3.7.2"
   },
   "dependencies": {
-    "@oem/log": "1.0.0",
-    "@oem/types": "1.0.0"
+    "@modernist/log": "1.0.0",
+    "@modernist/types": "1.0.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "47d7bcfa6957cd5c61c91dce18f80f5c9012cab9"
 }

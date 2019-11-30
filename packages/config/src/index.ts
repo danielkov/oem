@@ -1,30 +1,48 @@
-import { readdir } from "@oem/fs";
 import { join } from "path";
 
-import createLog from "@oem/log";
-import { OemConfig } from "@oem/types";
+import { isObject } from "@modernist/util";
+import { readdir } from "@modernist/fs";
+import createLog from "@modernist/log";
+import { Config, Unit } from "@modernist/types";
 
-const log = createLog("oem:config");
+const log = createLog("modernist/config");
 
 const findDirectory = async (dir = process.cwd()): Promise<string> => {
-  log`Looking for .oemrc.js in ${dir}`;
+  log`Looking for .modernistrc.js in ${dir}`;
   const files = await readdir(dir);
-  if (files.includes(".oemrc.js")) {
-    log`Found .oemrc.js directory: ${dir}`;
+  if (files.includes(".modernistrc.js")) {
+    log`Found .modernistrc.js directory: ${dir}`;
     return dir;
   }
   if (dir === "/") {
-    log`Found root directory. Still no .oemrc.js, giving up`;
-    throw new Error(`Could not find .oemrc.js relative to ${process.cwd()}`);
+    log`Found root directory. Still no .modernistrc.js, giving up`;
+    throw new Error(`Could not find .modernistrc.js relative to ${process.cwd()}`);
   }
-  log`${dir} does not have .oemrc.js, the search continues...`;
+  log`${dir} does not have .modernistrc.js, the search continues...`;
   return await findDirectory(join(dir, "../"));
 };
 
-const config = async (): Promise<{ directory: string; config: OemConfig }> => {
+const config = async (): Promise<{ directory: string; config: Config }> => {
   const directory = await findDirectory();
-  const config: OemConfig = require(join(directory, ".oemrc.js"));
-  return { directory, config };
+  log`Found directory: ${directory}`;
+  log`Loading config from ${directory}/.modernistrc.js`;
+  /* eslint-disable-next-line @typescript-eslint/no-var-requires */
+  const config: any = require(join(directory, ".modernistrc.js"));
+  log`Found config: ${config}`;
+  log`Determining if config is correct`;
+  if (config.actions) {
+    log`config.actions is present with value: ${config.actions}`;
+    return { directory, config };
+  }
+  log`Possible old config shape or incorrect`;
+  if (isObject(config)) {
+    log`We have an object exported, so we assume it's an action definition`;
+    return {
+      config: { actions: config as { [key: string]: Unit }, plugins: [] },
+      directory
+    };
+  }
+  throw new Error("Configuration is incorrect");
 };
 
 export default config;

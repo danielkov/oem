@@ -97,7 +97,7 @@ component.args = {
 /**
  * @example
  * ```sh
- * oem component --name Example
+ * modernist component --name Example
  * ```
  * generates:
  * ```sh

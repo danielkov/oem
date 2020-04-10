@@ -8,7 +8,7 @@ export const walkObject = async <K extends string | number, V, R>(
 
 export const isObject = (candidate: unknown): candidate is object => {
   return (
-    candidate !== "null" &&
+    candidate !== null &&
     typeof candidate === "object" &&
     !Array.isArray(candidate)
   );

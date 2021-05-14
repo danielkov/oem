@@ -24,7 +24,7 @@
     "eslint": "7.26.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.20.2",
-    "lerna": "3.22.1",
+    "lerna": "4.0.0",
     "prettier": "2.3.0",
     "standard-version": "7.1.0",
     "typescript": "3.9.9"

@@ -27,6 +27,6 @@
     "lerna": "3.22.1",
     "prettier": "2.0.5",
     "standard-version": "7.1.0",
-    "typescript": "3.9.7"
+    "typescript": "3.9.9"
   }
 }

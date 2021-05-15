@@ -1,9 +1,9 @@
 import { join } from "path";
 
 import createLog from "@modernist/log";
+import manifest from "@modernist/manifest";
 import { Tree, Command, Config } from "@modernist/types";
 import { walkObject } from "@modernist/util";
-import manifest from "@modernist/manifest";
 
 const log = createLog("modernist/core");
 

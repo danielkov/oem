@@ -19,11 +19,8 @@
     "release": "standard-version"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.23.0",
-    "@typescript-eslint/parser": "4.23.0",
     "eslint": "7.26.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.23.1",
+    "eslint-config-inlucent": "1.0.0",
     "lerna": "4.0.0",
     "prettier": "2.3.0",
     "standard-version": "9.3.0",

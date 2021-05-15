@@ -1,12 +1,17 @@
 export const walkObject = async <K extends string | number, V, R>(
   object: { [key in K]: V },
   cb: (key: K, value: V) => Promise<R>
-) =>
-  Promise.all(
-    Object.entries(object).map(([key, value]) => cb(key as K, value as V))
+) => {
+  return Promise.all(
+    Object.entries(object).map(([key, value]) => {
+      return cb(key as K, value as V);
+    })
   );
+};
 
-export const isObject = (candidate: unknown): candidate is object => {
+export const isObject = (
+  candidate: unknown
+): candidate is Record<string, unknown> => {
   return (
     candidate !== null &&
     typeof candidate === "object" &&
@@ -14,13 +19,22 @@ export const isObject = (candidate: unknown): candidate is object => {
   );
 };
 
-export const merge = <T extends any>(original: T, updates: Partial<T>) => {
+export const merge = <T extends Record<string, unknown>>(
+  original: T,
+  updates: Partial<T>
+) => {
   const result: T = { ...original };
   Object.entries(updates).forEach(([key, value]) => {
-    if (!result.hasOwnProperty(key) || !isObject(updates[key])) {
-      result[key] = value;
+    if (
+      !Object.prototype.hasOwnProperty.call(result, key) ||
+      !isObject(updates[key])
+    ) {
+      result[<keyof T>key] = value;
     } else {
-      result[key] = merge(result[key], updates[key] || {});
+      result[<keyof T>key] = merge(
+        result[<keyof T>key] as Record<string, unknown>,
+        (updates[key] as Record<string, unknown>) || {}
+      ) as any;
     }
   });
   return result;

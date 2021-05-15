@@ -1,6 +1,6 @@
 import createLog from "@modernist/log";
-import { merge } from "@modernist/util";
 import { Manifest, ManifestEntry } from "@modernist/types";
+import { merge } from "@modernist/util";
 
 const log = createLog("@modernist/manifest");
 
@@ -9,10 +9,11 @@ const createManifest = () => {
   const manifest: Manifest = [];
   const update = (newEntry: ManifestEntry) => {
     log`Updating manifest: ${manifest} update: ${newEntry}`;
-    const oldEntryIndex = manifest.findIndex(
-      entry => entry.path === newEntry.path
-    );
+    const oldEntryIndex = manifest.findIndex((entry) => {
+      return entry.path === newEntry.path;
+    });
     log`Index of old entry: ${oldEntryIndex}`;
+    // eslint-disable-next-line no-bitwise
     if (~oldEntryIndex) {
       const oldEntry = manifest[oldEntryIndex];
       log`Updating old entry: ${oldEntry}`;

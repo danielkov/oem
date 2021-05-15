@@ -10,14 +10,14 @@ export type Tree = {
 
 export type ArgumentDefinition = {
   name: string;
-  type: "Boolean" | "Number" | "String";
+  required?: boolean;
   description?: string;
 };
 
 export type Unit = {
   (args: Args): Tree | Promise<Tree>;
   description?: string;
-  args?: [ArgumentDefinition];
+  args?: ArgumentDefinition[];
   relative?: boolean;
 };
 

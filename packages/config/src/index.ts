@@ -1,9 +1,9 @@
 import { join } from "path";
 
-import { isObject } from "@modernist/util";
 import { readdir } from "@modernist/fs";
 import createLog from "@modernist/log";
 import { Config, Unit } from "@modernist/types";
+import { isObject } from "@modernist/util";
 
 const log = createLog("modernist/config");
 
@@ -16,17 +16,19 @@ const findDirectory = async (dir = process.cwd()): Promise<string> => {
   }
   if (dir === "/") {
     log`Found root directory. Still no .modernistrc.js, giving up`;
-    throw new Error(`Could not find .modernistrc.js relative to ${process.cwd()}`);
+    throw new Error(
+      `Could not find .modernistrc.js relative to ${process.cwd()}`
+    );
   }
   log`${dir} does not have .modernistrc.js, the search continues...`;
-  return await findDirectory(join(dir, "../"));
+  return findDirectory(join(dir, "../"));
 };
 
-const config = async (): Promise<{ directory: string; config: Config }> => {
+const configure = async (): Promise<{ directory: string; config: Config }> => {
   const directory = await findDirectory();
   log`Found directory: ${directory}`;
   log`Loading config from ${directory}/.modernistrc.js`;
-  /* eslint-disable-next-line @typescript-eslint/no-var-requires */
+  /* eslint-disable-next-line @typescript-eslint/no-var-requires, import/no-dynamic-require, global-require */
   const config: any = require(join(directory, ".modernistrc.js"));
   log`Found config: ${config}`;
   log`Determining if config is correct`;
@@ -39,10 +41,10 @@ const config = async (): Promise<{ directory: string; config: Config }> => {
     log`We have an object exported, so we assume it's an action definition`;
     return {
       config: { actions: config as { [key: string]: Unit }, plugins: [] },
-      directory
+      directory,
     };
   }
   throw new Error("Configuration is incorrect");
 };
 
-export default config;
+export default configure;

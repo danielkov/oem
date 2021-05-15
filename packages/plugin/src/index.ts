@@ -9,6 +9,7 @@ const plugin = (plugins: Plugin[]) => {
   return async (command: Command, config: Config, rootDir: string) => {
     log`Got command: ${command}, config: ${config}, rootDir: ${rootDir}`;
     log`Stacking plugins to be called first to last`;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - TypeScript does not play well with reduce, but this works, I promise
     await plugins.reduce(async (prev: Promise<void>, current: Plugin) => {
       log`Adding plugin: ${current}`;

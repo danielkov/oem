@@ -1,0 +1,26 @@
+{
+  "name": "@modernist/undefined",
+  "version": "1.0.0",
+  "description": "Automagic 🦄 Project Scaffolding with Code Generation - undefined",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "lint": "eslint src/index.ts"
+  },
+  "devDependencies": {
+    "eslint": "7.26.0",
+    "typescript": "4.2.4"
+  },
+  "dependencies": {},
+  "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

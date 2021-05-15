@@ -1,10 +1,10 @@
 #! /usr/bin/env node
 import cli from "@modernist/cli";
-import modernist from "@modernist/core";
 import configure from "@modernist/config";
+import modernist from "@modernist/core";
+import commit from "@modernist/fs";
 import createLog from "@modernist/log";
 import plugin from "@modernist/plugin";
-import commit from "@modernist/fs";
 
 const log = createLog("modernist");
 
@@ -17,7 +17,11 @@ const index = async () => {
   log`Got command: ${name} and arguments: ${args}`;
   log`Initializing plugins`;
   const { plugins } = config;
-  await plugin([modernist, ...plugins, commit])({ name, args }, config, directory);
+  await plugin([modernist, ...plugins, commit])(
+    { name, args },
+    config,
+    directory
+  );
 };
 
 index();

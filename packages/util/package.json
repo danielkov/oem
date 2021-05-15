@@ -1,6 +1,6 @@
 {
   "name": "@modernist/util",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - util",
   "main": "dist/index",
   "types": "dist/index",

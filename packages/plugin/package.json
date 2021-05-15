@@ -1,6 +1,6 @@
 {
   "name": "@modernist/plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Automagic 🦄 Project Scaffolding with Code Generation - plugin",
   "main": "dist/index",
   "types": "dist/index",
@@ -18,9 +18,9 @@
     "typescript": "4.2.4"
   },
   "dependencies": {
-    "@modernist/log": "1.0.0",
-    "@modernist/manifest": "1.0.0",
-    "@modernist/types": "1.0.0"
+    "@modernist/log": "^1.1.0",
+    "@modernist/manifest": "^1.1.0",
+    "@modernist/types": "^1.1.0"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT",

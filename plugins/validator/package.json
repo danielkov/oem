@@ -16,7 +16,7 @@
   "devDependencies": {
     "@modernist/types": "^1.1.1",
     "eslint": "7.26.0",
-    "typescript": "4.2.4"
+    "typescript": "4.9.5"
   },
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT",

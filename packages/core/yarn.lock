@@ -38,6 +38,38 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@modernist/fs@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@modernist/fs/-/fs-1.1.1.tgz#312a7f391d5680fffc6a3677e4ea9804c93eb9c4"
+  integrity sha512-jbtQdexXYbh6nVvrouXE509aZTZ3PPsb5iJh8/l3J82VDDU9oShf5emf+sNplzPa2OqghWkPE5LAFVMIIGEEyw==
+  dependencies:
+    "@modernist/log" "^1.1.1"
+    "@modernist/types" "^1.1.1"
+
+"@modernist/log@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@modernist/log/-/log-1.1.1.tgz#604f9b771760f3015affb9130e250408247230b8"
+  integrity sha512-8SvyTinkmpwj6zV6nKBB1q11ABgmne9jLoQMlbX5bDCHBZ04lhZqZKwFBomq5xup9w2FG5RPxz23DVwAM/Ui/Q==
+
+"@modernist/manifest@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@modernist/manifest/-/manifest-1.1.1.tgz#5f67eede2087b6073e2de96c817bb2a52f8f8cbd"
+  integrity sha512-5GfHNTkDAy4C1UcgBJpX4k5o1v/B06WL/73dWUaV01XYD9ne9SR0z3iuDOH7FYasA2RkGCdewSkqscCYNS0ing==
+  dependencies:
+    "@modernist/log" "^1.1.1"
+    "@modernist/types" "^1.1.1"
+    "@modernist/util" "^1.1.1"
+
+"@modernist/types@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@modernist/types/-/types-1.1.1.tgz#1ee2cb2cc7fc3e0b7cc4ed6e4abad28bb039fa75"
+  integrity sha512-og388aB8JL0PUsF5s6aQyE7/GiegvALkYgEdqQgyETF4WWnX69lwiH/C6fkRXQPxuWK+CFDKB2Kq4KyFNG9/kg==
+
+"@modernist/util@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@modernist/util/-/util-1.1.1.tgz#d48bf2062ca600c0279aa7f4d398950ef7790887"
+  integrity sha512-1+lTP305sKb5I7VhmEMxY/uy9Bgr36Pc61h0meFo+7CSXBt+B7PtyU0LP9GZYTVlgklTEnxzlf4ZMPCzcFuTkg==
+
 acorn-jsx@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.1.tgz#fc8661e11b7ac1539c47dbfea2e72b3af34d267b"
@@ -750,10 +782,10 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-typescript@4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
-  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
+typescript@5.8.2:
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.2.tgz#8170b3702f74b79db2e5a96207c15e65807999e4"
+  integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
 
 uri-js@^4.2.2:
   version "4.2.2"
